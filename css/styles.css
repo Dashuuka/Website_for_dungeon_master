@@ -1,0 +1,597 @@
+/* Общие стили для всего сайта */
+body {
+    font-family: 'Roboto', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #2C3531;
+    color: #D9B08C;
+    line-height: 1.6;
+}
+#cursor-follower {
+    position: absolute;
+    width: 30px;
+    height: 30px;
+    background-color: red;
+    border-radius: 50%;
+    pointer-events: none; /* Элемент не перехватывает события мыши */
+    transition: transform 0.1s ease; /* Плавное изменение позиции */
+}
+
+.container {
+    width: 80%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* Стили для header */
+.header {
+    background-color: #116466;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.navbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 0;
+}
+
+.logo img {
+    max-height: 60px;
+}
+
+/* Стили для меню гамбургера */
+.hamburger {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+}
+
+.hamburger span {
+    height: 3px;
+    background: #D9B08C;
+    margin: 3px 0;
+    width: 30px;
+}
+
+.nav-menu {
+    list-style: none;
+    display: flex;
+    margin: 0;
+    padding: 0;
+}
+
+.nav-menu li {
+    margin: 0 10px;
+}
+
+.nav-menu a {
+    text-decoration: none;
+    color: #D9B08C;
+    padding: 10px 20px;
+    background-color: #FFCB9A;
+    color: #2C3531;
+    border-radius: 5px;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.nav-menu a:hover {
+    background-color: #D1E8E2;
+    transform: scale(1.1);
+}
+
+.close-btn {
+    display: none;
+    font-size: 24px;
+    cursor: pointer;
+    padding: 10px;
+}
+
+@media (max-width: 885px) {
+    .hamburger {
+        display: flex;
+    }
+
+    .nav-menu {
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        top: 0;
+        right: 0;
+        width: 200px;
+        background-color: #116466;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        padding-top: 60px;
+    }
+
+    .nav-menu.active {
+        display: flex;
+    }
+
+    .close-btn {
+        display: block;
+        position: absolute;
+        top: 10px;
+        right: 10px;
+    }
+}
+/* Стили для меню навигации */
+.nav-menu a {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #FFCB9A; /* Цвет фона */
+    color: #2C3531; /* Цвет текста */
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.nav-menu a:hover {
+    background-color: #D1E8E2; /* Цвет фона при наведении */
+    color: #2C3531; /* Цвет текста при наведении */
+    transform: scale(1.1);
+}
+
+/* Стили для мобильного меню */
+.nav-menu .close-btn {
+    display: none; /* Скрыть крестик по умолчанию */
+}
+
+@media (max-width: 885px) {
+    .nav-menu {
+        display: none;
+        flex-direction: column;
+        position: fixed;
+        top: 0;
+        right: -100%;
+        height: 100%;
+        width: 250px;
+        background-color: #116466; /* Цвет для мобильного меню */
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        transition: right 0.3s ease;
+        z-index: 1000;
+        padding-top: 20px;
+    }
+    
+    .nav-menu.active {
+        right: 0;
+        display: flex;
+    }
+
+    .nav-menu li {
+        display: block;
+        text-align: center;
+        margin: 20px 0;
+    }
+
+    .nav-menu .close-btn {
+        display: block; /* Показать крестик только на мобильных устройствах */
+        position: absolute;
+        top: 10px;
+        right: 20px;
+        font-size: 30px;
+        cursor: pointer;
+        color: #D9B08C; /* Цвет крестика */
+    }
+
+    .hamburger {
+        display: flex;
+    }
+}
+
+
+/* Стили для hero секции */
+.hero {
+    background-color: #FFCB9A;
+    color: #2C3531;
+    padding: 100px 0;
+    text-align: center;
+}
+
+.hero h1 {
+    font-size: 48px;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+.hero p {
+    font-size: 18px;
+    margin-bottom: 30px;
+}
+
+.hero .btn {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #2C3531;
+    color: #FFCB9A;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.hero .btn:hover {
+    background-color: #D1E8E2;
+    transform: scale(1.1);
+}
+/* Специальные стили для кнопки "ИГРАТЬ" */
+/* .play-button {
+    font-size: 20px;
+    font-weight: bold;
+    background-color: #FFCB9A;
+    padding: 15px 30px;
+    border-radius: 8px;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.play-button:hover {
+    background-color: #2C3531;
+    transform: scale(1.1);
+} */
+
+/* Стили для features секции */
+.features {
+    padding: 80px 0;
+    background-color: #2C3531;
+}
+
+.features .container {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.slideshow-container {
+    flex: 0 0 30%;
+    max-width: 30%;
+    position: relative;
+    margin: auto;
+}
+
+.mySlides {
+    display: none;
+}
+
+.mySlides img {
+    width: 90%; 
+    height: auto;
+    margin: 0 auto; 
+    display: block; 
+}
+
+.feature-item {
+    flex: 0 0 48%;
+    max-width: 48%;
+}
+
+.feature-text {
+    color: #D9B08C; 
+}
+
+.feature-text h2 {
+    font-size: 24px;
+    margin-top: 20px;
+}
+
+.feature-text p {
+    margin-bottom: 20px;
+}
+
+/* Стили для subscribe секции */
+.subscribe {
+    padding: 40px 0;
+    background-color: #2C3531;
+    text-align: center;
+}
+
+.subscribe-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.subscribe p {
+    font-size: 18px;
+    color: #FFCB9A;
+    margin-bottom: 10px;
+}
+
+.subscribe-link {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-decoration: none;
+    color: #FFCB9A;
+}
+
+.subscribe-btn {
+    width: 30px;
+    height: 30px;
+    margin-top: 10px;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+}
+
+.subscribe-btn:hover {
+    transform: scale(1.1);
+}
+
+/* Стили для footer */
+.footer {
+    background-color: #116466;
+    color: #D9B08C;
+    text-align: center;
+    padding: 20px 0;
+}
+
+.footer-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.footer-nav {
+    flex: 1;
+}
+
+.footer-menu {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.footer-menu li {
+    margin: 0 15px;
+}
+
+.footer-menu a {
+    color: #D9B08C;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.footer-menu a:hover {
+    color: #FFCB9A;
+}
+
+.footer-subscribe {
+    flex: 1;
+    text-align: center;
+}
+
+.footer-subscribe p {
+    margin-bottom: 10px;
+}
+
+.subscribe-btn img {
+    width: 30px;
+    height: 30px;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+}
+
+.subscribe-btn img:hover {
+    transform: scale(1.1);
+}
+
+.footer p {
+    margin: 10px 0 0;
+}
+
+/* Медиа запросы для адаптивности */
+@media (max-width: 768px) {
+    .container {
+        width: 90%;
+    }
+
+    .nav-menu li {
+        margin-right: 10px;
+    }
+
+    .hero h1 {
+        font-size: 36px;
+    }
+
+    .hero p {
+        font-size: 16px;
+    }
+
+    .features .container {
+        flex-direction: column;
+    }
+
+    .feature-text {
+        flex: 0 0 100%;
+    }
+}
+
+.story {
+    margin: 40px 0;
+    padding: 20px;
+    background-color: #2C3531;
+    border: 1px solid #D9B08C;
+    border-radius: 8px;
+}
+
+.video-wrapper {
+    position: relative;
+    width: 100%;
+    padding-bottom: 56.25%; /* Задаем пропорции 16:9 (высота / ширина * 100%) */
+    height: 0;
+    overflow: hidden;
+    max-width: 800px; /* Максимальная ширина контейнера для видео */
+    margin: 0 auto; /* Центрируем по горизонтали */
+}
+
+.video-wrapper iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: 0; /* Убираем рамку у iframe */
+}
+/* Стили для кнопки в разделе игры */
+.btn {
+    display: inline-block;
+    font-size: 18px;
+    font-weight: bold;
+    background-color: #FFCB9A;
+    color: #2C3531;
+    padding: 10px 20px;
+    border-radius: 5px;
+    text-decoration: none;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.btn:hover {
+    background-color: #D1E8E2;
+    color: #2C3531;
+    transform: scale(1.1);
+}
+
+/*Для index.html*/
+.hero-content h1 {
+    opacity: 0; /* Начальная прозрачность заголовка */
+    transform: translateY(-50px); /* Смещение заголовка вверх на 50px */
+    transition: opacity 0.8s ease-out, transform 0.8s ease-out; /* Плавный переход для opacity и transform */
+}
+
+.hero-content h1.animate {
+    opacity: 1; /* Заголовок становится видимым */
+    transform: translateY(0); /* Возврат заголовка в исходное положение */
+}
+
+/* Стили для раздела с командой */
+.team-section {
+    padding: 80px 0;
+    background-color: #2C3531;
+}
+
+.team-section h2 {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.container {
+    width: 80%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.team-members {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+
+.team-member {
+    flex: 0 0 calc(33.33% - 20px);
+    margin-bottom: 40px;
+    padding: 20px;
+    text-align: center;
+    background-color: #116466;
+    border: 1px solid #FFCB9A;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start; /* Выравниваем контент к верхней границе */
+    align-items: center; /* Выравниваем по центру по горизонтали */
+}
+
+.team-member img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 50%;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.team-member h3 {
+    margin-top: 20px;
+    font-size: 24px;
+}
+
+.team-member p {
+    font-size: 16px;
+    line-height: 1.6;
+    margin-bottom: 20px; /* Добавляем отступ снизу для текста */
+}
+
+.team-member .btn {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #FFCB9A;
+    color: #2C3531;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    margin: 5px 0; /* добавляем отступы для кнопок */
+}
+
+.team-member .btn:hover {
+    background-color: #D1E8E2;
+    transform: scale(1.05);
+}
+
+/* Медиа-запрос для мобильных устройств */
+@media (max-width: 768px) {
+    .team-members {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .team-member {
+        flex: 0 0 100%;
+        max-width: 100%;
+    }
+}
+
+
+/* Стили для страницы play.html */
+/* Стили для страницы play.html */
+.play-container {
+    text-align: center;
+    padding: 50px;
+}
+
+.play-container .game iframe {
+    border: none;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    height: auto;
+    max-width: 800px;
+    max-height: 600px;
+    aspect-ratio: 4 / 3;
+}
+
+.download {
+    margin-top: 20px;
+}
+
+.download-button {
+    display: inline-block;
+    font-size: 18px;
+    font-weight: bold;
+    background-color: #FFCB9A;
+    color: #2C3531;
+    padding: 10px 20px;
+    border-radius: 5px;
+    text-decoration: none;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.download-button:hover {
+    background-color: #D1E8E2;
+    transform: scale(1.05);
+}
+
+.mobile-message {
+    display: none;
+    margin-top: 20px;
+}
