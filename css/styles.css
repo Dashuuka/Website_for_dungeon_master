@@ -7,7 +7,7 @@ body {
     color: #D9B08C;
     line-height: 1.6;
 }
-#cursor-follower {
+/* #cursor-follower {
     position: absolute;
     width: 30px;
     height: 30px;
@@ -15,7 +15,7 @@ body {
     border-radius: 50%;
     pointer-events: none; /* Элемент не перехватывает события мыши */
     transition: transform 0.1s ease; /* Плавное изменение позиции */
-}
+} */
 
 .container {
     width: 80%;
